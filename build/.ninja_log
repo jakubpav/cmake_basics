@@ -1,0 +1,7 @@
+# ninja log v6
+1	670	1731018465124581734	src/CMakeFiles/example.dir/main.cpp.o	ef655bc74c794684
+511	1026	1731018465634274340	src/utility/libArgParser.a	93de866668a695bf
+1	509	1731018465124013439	src/utility/CMakeFiles/ArgParser.dir/ArgParser.cpp.o	e2f936494f2f0e8c
+1	65	1731018576727253606	build.ninja	9e12638cc5c565e8
+3	531	1731018576741276156	src/utility/CMakeFiles/ArgParser.dir/ArgParser.cpp.o	e9485c52bf7949d0
+531	574	1731018577269312174	src/utility/libArgParser.a	93de866668a695bf
