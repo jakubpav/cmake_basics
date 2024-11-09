@@ -3,7 +3,7 @@
 #include <ostream>
 enum class Colours { white, red, green, blue, black };
 
-std::ostream &operator<<(std::ostream &os, Colours c) {
+inline std::ostream &operator<<(std::ostream &os, Colours c) {
   switch (c) {
   case Colours::white:
     return os << "\033[0;97m \033[0m";
@@ -16,4 +16,5 @@ std::ostream &operator<<(std::ostream &os, Colours c) {
   case Colours::black:
     return os << "\033[0;90m \033[0m";
   };
+  return os;
 }

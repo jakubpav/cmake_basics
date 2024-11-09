@@ -7,8 +7,7 @@ target_include_directories(ArgParser PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_sources(ArgParser PRIVATE ArgParser.cpp)
 
 if(${UT_TEST_FEATURES})
-    target_compile_definitions(ArgParser PUBLIC ARGS_HAVE_TEST_FEATURES)
-    target_compile_definitions(ArgParser PRIVATE TEST_FEATURES_ENABLED)
+    target_compile_definitions(ArgParser PUBLIC UT_ARGS_HAVE_TEST_FEATURES PRIVATE TEST_FEATURES_ENABLED)
 endif()
 
 target_compile_features(ArgParser PRIVATE cxx_std_23)

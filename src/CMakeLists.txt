@@ -1,6 +1,4 @@
 
-set(UT_TEST_FEATURES ON)
-
 add_subdirectory(colours)
 add_subdirectory(utility)
 add_subdirectory(graphic)
