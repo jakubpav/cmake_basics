@@ -15,7 +15,7 @@
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
-                "UT_TEST_FEATURES": "OFF"
+                "UT_TEST_FEATURES": "ON"
             }
         }
     ],

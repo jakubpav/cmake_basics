@@ -5,11 +5,9 @@
 class ArgParser {
 public:
   bool parse(int, const char **);
-  void help()
-#ifndef UT_ARGS_HAVE_TEST_FEATURES
-      {}
+#ifdef UT_ARGS_HAVE_TEST_FEATURES
+  void help();
 #endif
-  ;
   std::vector<Colors> get_colours();
   std::size_t get_count();
 

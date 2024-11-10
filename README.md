@@ -11,8 +11,10 @@ Basics of the Modern cmake to future proof your build system.
   - [Static and Shared Libraries](#static-and-shared-libraries)
   - [Interface Libraries](#interface-libraries)
   - [Custom Targets](#custom-targets)
+  - [Aliases](#aliases)
 - [Compile and Linker Flags](#compile-and-linker-flags)
 - [Build Types](#build-types)
+- [Example explanation](#example-explanation)
 
 ## Targets
 
@@ -46,6 +48,15 @@ Special type of a "library" in cmake basically this type of target is not respon
 ### Custom targets
 
 This is another and even more special type of target. There you can describe any command to be done during the building stage of the build system process.
+
+### Aliases
+
+Every target can have alias defined. For libraries it is a common practice to do that. Defining alias is done like this
+
+```cmake
+add_library(a)
+add_library(B::a ALIAS a)
+```
 
 ## Compile and Linker Flags
 
