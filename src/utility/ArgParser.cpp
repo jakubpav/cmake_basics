@@ -6,7 +6,7 @@
 #endif
 
 bool ArgParser::parse(int argc, const char **argv) {
-  if (argc < 2 || (argc - 2) >= (static_cast<int>(Colours::black) + 2))
+  if (argc < 2 || (argc - 2) >= (static_cast<int>(Colors::black) + 2))
     return false;
   std::vector<std::string_view> args(
       argv, std::next(argv, static_cast<std::ptrdiff_t>(argc)));
@@ -25,14 +25,14 @@ bool ArgParser::parse(int argc, const char **argv) {
       continue;
     }
 
-    _colours.push_back(static_cast<Colours>(std::stoul(std::string(arg))));
+    _colours.push_back(static_cast<Colors>(std::stoul(std::string(arg))));
     i++;
   }
 
   if (_colours.size() == 0) {
     for (auto &&colour_num :
-         std::views::iota(static_cast<int>(Colours::white), 5)) {
-      _colours.push_back(static_cast<Colours>(colour_num));
+         std::views::iota(static_cast<int>(Colors::white), 5)) {
+      _colours.push_back(static_cast<Colors>(colour_num));
     }
   }
 
@@ -47,4 +47,4 @@ void ArgParser::help() {
 }
 #endif
 
-std::vector<Colours> ArgParser::get_colours() { return _colours; }
+std::vector<Colors> ArgParser::get_colours() { return _colours; }

@@ -11,4 +11,4 @@ if(${UT_TEST_FEATURES})
 endif()
 
 target_compile_features(ArgParser PRIVATE cxx_std_23)
-target_link_libraries(ArgParser PUBLIC Graphics::Colours)
+target_link_libraries(ArgParser PUBLIC Graphics::Colors)

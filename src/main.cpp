@@ -1,5 +1,5 @@
 #include <ArgParser.hpp>
-#include <Graphics.hpp>
+#include <Rainbow.hpp>
 
 int main(int argc, const char **argv) {
   auto argparser = ArgParser{};

@@ -1,12 +1,12 @@
 #pragma once
 
-#include <Colours.hpp>
+#include <Colors.hpp>
 #include <iostream>
 #include <random>
 #include <ranges>
 #include <vector>
 
-inline auto render_rainbow(std::vector<Colours> enabled_colours,
+inline auto render_rainbow(std::vector<Colors> enabled_colours,
                            std::size_t count) {
   std::cout << "LOOK: \n";
   std::random_device r;

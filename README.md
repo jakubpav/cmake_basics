@@ -82,3 +82,9 @@ Features are basically predefined aliases for compiler specific flags with some 
 
 This repo is also an example for preferred way of wiring software to be mainly modular and simple.
 The program consists from 4 parts which are divided to 3 libraries, 2 are header-only (interface) libraries and one static library. Fourth part is main program.
+
+- [Graphics::Colors](src/colours/CMakeLists.txt)
+- [Graphics::Rainbow](src/graphic/CMakeLists.txt)
+- [Utility::ArgParser](src/utility/CMakelists.txt)
+- [example](src/CMakeLists.txt)
+- [Base cmake](CMakeLists.txt)
