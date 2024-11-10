@@ -13,7 +13,7 @@ inline auto render_rainbow(std::vector<Colors> enabled_colours,
   std::default_random_engine e1(r());
   std::uniform_int_distribution<int> uniform_dist(0,
                                                   enabled_colours.size() - 1);
-  for (auto _unused : std::views::iota(0ul, count)) {
+  for ([[maybe_unused]] auto _unused : std::views::iota(0ul, count)) {
     std::cout << enabled_colours[uniform_dist(e1)];
   }
   std::cout << '\n';
