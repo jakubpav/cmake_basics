@@ -70,4 +70,15 @@ Features are basically predefined aliases for compiler specific flags with some 
 
 ## Build Types
 
- TODD: *to be written*
+ In addition to your flags CMake adds some basic flags to your binaries by default these flags are determined by the **build type** you are using during configuration stage.
+ There are four build types (explained with gcc flags):
+
+- Release `-O3`
+- Debug `-g -Og`
+- RelWithDebInfo `-g -O2`
+- MinSizeRel `-Os`
+
+## Example explanation
+
+This repo is also an example for preferred way of wiring software to be mainly modular and simple.
+The program consists from 4 parts which are divided to 3 libraries, 2 are header-only (interface) libraries and one static library. Fourth part is main program.
