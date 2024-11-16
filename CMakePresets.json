@@ -7,9 +7,8 @@
     },
     "configurePresets": [
         {
-            "name": "default",
-            "hidden": false,
-            "description": "Default configuration",
+            "name": "debug",
+            "description": "Debug configuration",
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/build",
             "cacheVariables": {
@@ -17,14 +16,63 @@
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
                 "UT_TEST_FEATURES": "ON"
             }
+        },
+        {
+            "name": "release",
+            "description": "Release configuration",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "UT_TEST_FEATURES": "OFF"
+            }
+        },
+        {
+            "name": "dev",
+            "description": "Release configuration with test features",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "UT_TEST_FEATURES": "ON"
+            }
+        },
+        {
+            "name": "tidy",
+            "description": "clang tidy configuration with fixing the code",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "UT_TEST_FEATURES": "ON",
+                "CXX_CLANG_TIDY": "$(which clang-tidy);-fix"
+            }
         }
     ],
     "buildPresets": [
         {
-            "name": "default",
-            "hidden": false,
-            "description": "Default build",
-            "configurePreset": "default"
+            "name": "debug",
+            "description": "Debug build",
+            "configurePreset": "debug"
+        },
+        {
+            "name": "release",
+            "description": "Release build",
+            "configurePreset": "release"
+        },
+        {
+            "name": "dev release",
+            "description": "Release build",
+            "configurePreset": "dev"
+        },
+        {
+            "name": "tidy",
+            "description": "Perform clang tidy lint with code fixes",
+            "jobs": 1,
+            "configurePreset": "tidy"
         }
     ]
 }

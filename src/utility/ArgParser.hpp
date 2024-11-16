@@ -8,10 +8,10 @@ public:
 #ifdef UT_ARGS_HAVE_TEST_FEATURES
   void help();
 #endif
-  std::vector<Colors> get_colours();
+  std::vector<Colors> get_colors();
   std::size_t get_count();
 
 private:
-  std::vector<Colors> _colours = {};
+  std::vector<Colors> _colors = {};
   std::size_t _number = 0;
 };

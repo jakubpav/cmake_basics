@@ -25,14 +25,14 @@ bool ArgParser::parse(int argc, const char **argv) {
       continue;
     }
 
-    _colours.push_back(static_cast<Colors>(std::stoul(std::string(arg))));
+    _colors.push_back(static_cast<Colors>(std::stoul(std::string(arg))));
     i++;
   }
 
-  if (_colours.size() == 0) {
+  if (_colors.size() == 0) {
     for (auto &&colour_num :
          std::views::iota(static_cast<int>(Colors::white), 5)) {
-      _colours.push_back(static_cast<Colors>(colour_num));
+      _colors.push_back(static_cast<Colors>(colour_num));
     }
   }
 
@@ -47,4 +47,4 @@ void ArgParser::help() {
 }
 #endif
 
-std::vector<Colors> ArgParser::get_colours() { return _colours; }
+std::vector<Colors> ArgParser::get_colors() { return _colors; }

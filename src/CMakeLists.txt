@@ -1,5 +1,5 @@
 
-add_subdirectory(colours)
+add_subdirectory(colors)
 add_subdirectory(utility)
 add_subdirectory(graphic)
 
