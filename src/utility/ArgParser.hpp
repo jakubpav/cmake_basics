@@ -1,15 +1,16 @@
 #include <Colors.hpp>
 #include <cstddef>
+#include <span>
 #include <vector>
 
 class ArgParser {
 public:
-  bool parse(int, const char **);
+  auto parse(int, const char **) -> bool;
 #ifdef UT_ARGS_HAVE_TEST_FEATURES
   void help();
 #endif
-  std::vector<Colors> get_colors();
-  std::size_t get_count();
+  constexpr auto get_colors() -> decltype(auto) { return std::span{_colors}; };
+  constexpr auto get_count() -> std::size_t { return _number; };
 
 private:
   std::vector<Colors> _colors = {};

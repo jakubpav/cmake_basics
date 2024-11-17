@@ -5,8 +5,8 @@
 #include <iostream>
 #endif
 
-bool ArgParser::parse(int argc, const char **argv) {
-  if (argc < 2 || (argc - 2) >= (static_cast<int>(Colors::black) + 2))
+auto ArgParser::parse(int argc, const char **argv) -> bool {
+  if (argc < 2 || (argc - 2) >= (to_int(Colors::black) + 2))
     return false;
   std::vector<std::string_view> args(
       argv, std::next(argv, static_cast<std::ptrdiff_t>(argc)));
@@ -25,26 +25,22 @@ bool ArgParser::parse(int argc, const char **argv) {
       continue;
     }
 
-    _colors.push_back(static_cast<Colors>(std::stoul(std::string(arg))));
+    _colors.push_back(Colors(std::stoul(std::string(arg))));
     i++;
   }
 
   if (_colors.size() == 0) {
     for (auto &&colour_num :
-         std::views::iota(static_cast<int>(Colors::white), 5)) {
-      _colors.push_back(static_cast<Colors>(colour_num));
+         std::views::iota(to_int(Colors::white), to_int(Colors::black))) {
+      _colors.push_back(Colors(colour_num));
     }
   }
 
   return true;
 }
 
-std::size_t ArgParser::get_count() { return _number; }
-
 #ifdef TEST_FEATURES_ENABLED
 void ArgParser::help() {
   std::cout << "Usage: ./example [count] [[colour] ...]\n";
 }
 #endif
-
-std::vector<Colors> ArgParser::get_colors() { return _colors; }

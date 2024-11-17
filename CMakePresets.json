@@ -48,7 +48,7 @@
                 "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
                 "UT_TEST_FEATURES": "ON",
-                "CXX_CLANG_TIDY": "$(which clang-tidy);-fix"
+                "CMAKE_CXX_CLANG_TIDY": "/usr/local/bin/clang-tidy;-fix;-fix-errors;-fix-notes"
             }
         }
     ],
